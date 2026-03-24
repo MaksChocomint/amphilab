@@ -151,7 +151,7 @@ export default function StoriesSection() {
   };
 
   return (
-    <section className="relative isolate overflow-hidden bg-dark-green">
+    <section id="stories" className="relative isolate overflow-hidden bg-dark-green">
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/stories/stories_bg.jpg')" }}

@@ -25,8 +25,8 @@ const Hero = () => {
               </h3>
 
               <div className="flex w-full max-w-[24rem] flex-col gap-3 sm:max-w-none sm:flex-row sm:justify-center sm:gap-4 lg:gap-8">
-                <HeroButton>Исследования</HeroButton>
-                <HeroButton>Виды лягушек</HeroButton>
+                <HeroButton href="/research">Исследования</HeroButton>
+                <HeroButton href="/species">Виды лягушек</HeroButton>
               </div>
 
               <div className="mt-8 flex w-full flex-col gap-4 lg:hidden">
