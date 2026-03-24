@@ -21,8 +21,7 @@ const FrogCard = ({
   const isFrogRight = frogPosition === "right";
 
   return (
-    <div className="relative inline-block max-w-[460px]">
-      {/* Лягушка на рамке */}
+    <div className="relative inline-block w-full max-w-[460px]">
       <div
         className={`absolute -top-2 ${
           isFrogRight ? "right-0" : "left-0"
@@ -33,20 +32,20 @@ const FrogCard = ({
           alt="Frog"
           width={100}
           height={100}
+          className="h-auto w-16 sm:w-20 md:w-24"
           style={{
             transform: isFrogRight ? "scaleX(-1)" : "scaleX(1)",
           }}
         />
       </div>
 
-      {/* Рамочка с контентом */}
       <div
-        className={`border ${borderColorClass} relative rounded-4xl`}
+        className={`border ${borderColorClass} relative rounded-[2rem] sm:rounded-4xl`}
         style={{
           backgroundColor: "rgba(38, 38, 38, 0.2)",
         }}
       >
-        <div className="px-8 py-3">{children}</div>
+        <div className="px-5 py-4 sm:px-8 sm:py-3">{children}</div>
       </div>
     </div>
   );

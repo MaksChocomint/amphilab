@@ -1,49 +1,64 @@
 "use client";
 
-import { motion, scale } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
-import { useState, useEffect } from "react";
-const jumpVariants = {
-  initial: { y: 100, opacity: 0, x: 0 },
-  animate: {
-    y: [100, -300, 0],
-    x: [200, 50, 30],
-    scale: [0.5, 0.7, 1],
-    opacity: [0, 1, 1],
-    transition: {
-      duration: 0.6,
-      delay: 2,
-      ease: "easeOut",
-      times: [0, 0.4, 1],
-    },
-  },
-};
+import { useEffect, useState } from "react";
+
 const Frog = () => {
   const [zIndex, setZIndex] = useState(10);
+  const floatDelay = 2.62;
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setZIndex(30);
-    }, 2300); // 1.5s delay + 1.2s duration
+    }, 2300);
 
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <motion.div
-      variants={jumpVariants}
-      initial="initial"
-      animate="animate"
-      className="absolute bottom-40 right-32"
+      initial={{ y: 240, x: 190, scale: 0.5, opacity: 0 }}
+      animate={{
+        y: [240, -90, 0],
+        x: [190, 44, 0],
+        scale: [0.5, 0.78, 1],
+        opacity: [0, 1, 1],
+      }}
+      transition={{
+        duration: 0.72,
+        delay: 1.9,
+        ease: "easeOut",
+        times: [0, 0.4, 1],
+      }}
+      className="pointer-events-none absolute right-[-0.25rem] top-28 hidden w-[28vw] max-w-[11rem] sm:block md:right-3 md:top-30 md:max-w-[12rem] lg:right-[6rem] lg:top-[8.25rem] lg:max-w-[15.5rem] xl:right-[7.5rem] xl:top-[8.75rem] xl:max-w-[17.5rem]"
       style={{ zIndex }}
     >
-      <Image
-        src="/hero/hero_frog.png"
-        alt="Лягушка"
-        width={500}
-        height={500}
-        priority
-      />
+      <motion.div
+        animate={
+          {
+            y: [0, 10, 0],
+            x: [0, -2, 0],
+            rotate: [2, 0, 2],
+            scale: [1, 1.015, 1],
+          }
+        }
+        transition={{
+          duration: 6.6,
+          delay: floatDelay,
+          repeat: Number.POSITIVE_INFINITY,
+          ease: "easeInOut",
+        }}
+      >
+        <Image
+          src="/hero/hero_frog.png"
+          alt="Лягушка"
+          width={500}
+          height={500}
+          priority
+          className="h-auto w-full drop-shadow-[0_18px_24px_rgba(0,0,0,0.32)]"
+        />
+      </motion.div>
     </motion.div>
   );
 };

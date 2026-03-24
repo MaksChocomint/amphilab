@@ -15,4 +15,6 @@ html {
 body {
   font-family: var(--font-jost), system-ui, -apple-system, sans-serif;
   color: var(--color-beige);
+  background: var(--color-dark-green);
+  overflow-x: hidden;
 }

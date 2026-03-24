@@ -1,15 +1,15 @@
-"use client";
-
 import Hero from "@/components/Main/Hero/Hero";
-import Intro from "@/components/Main/Intro/IntroSection";
+import IntroSection from "@/components/Main/Intro/IntroSection";
+import StoriesSection from "@/components/Main/Stories/StoriesSection";
+import FooterSection from "@/components/Main/Footer/FooterSection";
 
 export default function Home() {
   return (
-    <div className="snap-mandatory snap-y h-screen overflow-y-scroll">
-      <div className="snap-start snap-always h-screen w-full">
-        <Hero />
-      </div>
-      <Intro />
-    </div>
+    <main className="overflow-x-hidden bg-dark-green">
+      <Hero />
+      <IntroSection />
+      <StoriesSection />
+      <FooterSection />
+    </main>
   );
 }
